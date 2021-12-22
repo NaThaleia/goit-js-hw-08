@@ -7,7 +7,7 @@ const throttle = require('lodash.throttle');
 
 const onPlay = function (data) {
   localStorage.setItem('videoplayer-current-time', Math.round(data.seconds));
-  console.log(Number(localStorage.getItem('videoplayer-current-time')));
+  console.log(`Считаем секунды: ${Number(localStorage.getItem('videoplayer-current-time'))}`);
 };
 player.on('timeupdate', throttle(onPlay, 1000));
 
