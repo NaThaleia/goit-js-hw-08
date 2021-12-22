@@ -5,9 +5,9 @@ const LOCAL_STORAGE_KEY = 'feedback-form-state';
 const formRef = document.querySelector('.feedback-form');
 
 formRef.addEventListener('submit', toCleanForm);
-formRef.addEventListener('input', throttle(PutForm, 500));
+formRef.addEventListener('input', throttle(putForm, 500));
 
-function PutForm() {
+function putForm() {
   const formData = new FormData(formRef);
   let userForm = {};
   formData.forEach((value, name) => (userForm[name] = value.trim()));
