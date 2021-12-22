@@ -3,7 +3,7 @@ const iframe = document.querySelector('#vimeo-player');
 const player = new Vimeo.Player(iframe);
 
 // берем лодеш
-const throttle = require('lodash.throttle');
+import throttle from 'lodash.throttle';
 
 const onPlay = function (data) {
   localStorage.setItem('videoplayer-current-time', Math.round(data.seconds));
