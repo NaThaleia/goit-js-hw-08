@@ -30,7 +30,8 @@ function toCleanForm(evt) {
   evt.preventDefault();
   const inputName = form.email.value;
   const inputMessage = form.message.value;
-  if (inputName && inputMessage !== '') {
+
+  if (inputName && inputMessage.trim() !== '') {
     let userForm = localStorage.getItem(LOCAL_STORAGE_KEY);
     userForm = JSON.parse(userForm);
     console.log('Submit', userForm);
@@ -38,6 +39,7 @@ function toCleanForm(evt) {
     evt.currentTarget.reset();
     return;
   }
+
   alert('Поля не могут быть пустыми!');
   return;
 }
